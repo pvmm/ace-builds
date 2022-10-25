@@ -26,7 +26,7 @@
 </head>
 <body>
     <div id="optionsPanel" style="position:absolute;height:100%;width:260px">
-        <a href="http://c9.io" title="Cloud9 IDE | Your code anywhere, anytime">
+        <a href="http://c9.io" title="Cloud9 IDE2 | Your code anywhere, anytime">
             <img id="c9-logo" src="../kitchen-sink/logo.png" style="width: 172px;margin: -9px 30px -12px 51px;">
         </a>
     </div>

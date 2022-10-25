@@ -1250,7 +1250,7 @@ exports.openLogView = function() {
     logEditor = sp.$editors[1];
     
     if (!logSession) {
-        logSession = new EditSession(localStorage.lastTestCase || "", "ace/mode/javascript");
+        logSession = new EditSession(localStorage.lastTestCase || "", "ace/mode/c_cpp");
         logSession.setUndoManager(new UndoManager)
     }
     logEditor.setSession(logSession);
@@ -2047,8 +2047,9 @@ function makeHuge(txt) {
 }
 
 var docs = {
-    "docs/javascript.js": {order: 1, name: "JavaScript"},
+    "docs/c_cpp.cpp": {order: 1, name: "C and C++"},
 
+    "docs/javascript.js": {name: "JavaScript", wrapped: true},
     "docs/latex.tex": {name: "LaTeX", wrapped: true},
     "docs/markdown.md": {name: "Markdown", wrapped: true},
     "docs/mushcode.mc": {name: "MUSHCode", wrapped: true},
@@ -7011,7 +7012,7 @@ optionsPanel.add({
             position: -101,
             onchange: doclist.pickDocument,
             getValue: function() {
-                return env.editor.session.name || "javascript";
+                return env.editor.session.name || "c_cpp";
             }
         },
         Split: {
@@ -7075,7 +7076,7 @@ function updateUIEditorOptions() {
     optionsPanel.render();
 }
 
-optionsPanel.setOption("doc", util.getOption("doc") || "JavaScript");
+optionsPanel.setOption("doc", util.getOption("doc") || "C and C++");
 for (var i in optionsPanel.options) {
     var value = util.getOption(i);
     if (value != undefined) {
